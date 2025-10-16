@@ -1,4 +1,4 @@
-package api_test
+package boards_test
 
 import (
 	"net/http"
@@ -26,7 +26,7 @@ var _ = Describe("Boards", func() {
 
 			apitest.New(). // configuration
 				HandlerFunc(handler).
-				Get("/message"). // request
+				Get("/boards"). // request
 				Expect(t). // expectations
 				Body(`{"message": "hello"}`).
 				Status(http.StatusOK).
